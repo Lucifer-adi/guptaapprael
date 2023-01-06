@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        body{
+     
+            background-image: url("./banner/sign\ 2222.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 55vh;
+
+        }
+        #container{
+            margin: 15% 60%;
+            
+            background-color: antiquewhite;
+            border: solid 10px rgb(6, 47, 72);
+            border-radius: 10px;
+            height: 55vh;
+            width: 65vh;
+            position: relative;
+        }
+        .log{
+            text-align: center;
+            color: rgb(12, 12, 80);
+        }
+        #input_user{
+            padding: 10px;
+            text-align: center;
+            margin-left: 25%;
+        }
+        #input_pass{
+            padding: 10px;
+            text-align: center;
+            margin-left: 25%;
+            margin-top: 5px;
+        }
+        #btn{
+            padding: 10px;
+            text-align: center;
+            margin-left: 40%;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" onsubmit="return validateForm()" >
+        <div id="container">
+            <h2 id="login" class="log">Log in</h2>
+            <input type="text" id="input_user" placeholder="user name"><br>
+            <p id="usererr" class="error"></p>
+            <input type="password" id="input_pass" placeholder="password"><br>
+            <p id="passerr" class="error"></p>
+           <button type="submit" id="btn">submit</button> 
+        </div>
+    </form>
+</body>
+</html>
+<script>
+    let input_user = document.getElementById("input_user");
+    let input_pass = document.getElementById("input_pass");
+    let btn = document.getElementById("btn");
+    let flag =1;
+    function validateForm(){
+        if(input_user.value ==""){
+        document.getElementById('usererr').innerText ="enter name";
+         flag=0;
+        }
+        else if(input_user.value.length <3){
+            document.getElementById('usererr').innerText ="enter  3 char name"  
+            flag=0;
+        }else{
+            document.getElementById('usererr').innerText ="";
+            flag=1;
+        }
+         if(input_pass.value ==""){
+            document.getElementById('passerr').innerText ="enter password";
+            flag=0;
+        }
+        else{
+            document.getElementById('passerr').innerText ="";
+            flag=1;
+        }
+        if(flag){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
+
+</script>
